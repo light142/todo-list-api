@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "auth_app",
+    "todo_list_app",
     "drf_yasg",
     "rest_framework",
     "rest_framework.authtoken",
