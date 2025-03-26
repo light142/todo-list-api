@@ -7,5 +7,8 @@ class TodoListCreateView(generics.ListCreateAPIView):
     serializer_class = TodoSerializer
     permission_classes = [permissions.IsAuthenticated]  # 🔹 Require authentication
 
+    def get_queryset(self):
+        return Todo.objects.filter(user=self.request.user)  # 🔹 Show only user's todos
+
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)  # 🔹 Assign todo to the logged-in user
