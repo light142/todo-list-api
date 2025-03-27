@@ -12,8 +12,8 @@ Pipfile
 Pipfile.lock
 
 # Django-related files
-*.sqlite3
-db.sqlite3
+# *.sqlite3
+# db.sqlite3
 /media/
 staticfiles/
 *.log
