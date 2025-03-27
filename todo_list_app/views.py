@@ -19,6 +19,8 @@ class TodoDetailView(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def get_queryset(self):
-        return Todo.objects.filter(
-            user=self.request.user
-        )  # 🔹 Prevent users from accessing others' todos
+        if self.request.user.is_authenticated:
+            return Todo.objects.filter(
+                user=self.request.user
+            )  # 🔹 Prevent users from accessing others' todos
+        return Todo.objects.none()  # R
