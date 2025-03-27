@@ -5,5 +5,5 @@ urlpatterns = [
     path("todos/", TodoListCreateView.as_view(), name="todo-list"),
     path(
         "todos/<int:pk>/", TodoDetailView.as_view(), name="todo-detail"
-    ),  # GET (retrieve), PUT (update), DELETE
+    ),  # GET (retrieve), PUT (update)
 ]
